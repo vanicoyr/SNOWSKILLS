@@ -17,7 +17,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 
 ## 1. 合约接口
 
-**合约地址**：`0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7`。
+**合约地址**：`0xb8793bdc7fad01a49178a559bc540da4b395b923`。
 
 ### 创建代币 createToken
 
@@ -67,7 +67,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 
 | 参数 | 说明 |
 |------|------|
-| `contractAddress` | `0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7` |
+| `contractAddress` | `0xb8793bdc7fad01a49178a559bc540da4b395b923` |
 | `abi` | createToken 的 ABI（见 [references/contract-abi.md](references/contract-abi.md)） |
 | `functionName` | `"createToken"` |
 | `args` | `[_name, _symbol, _meta, _feeTo, _salt, _taxRate]`：名称、符号、_meta（Agent 跑 upload 脚本得到）、受益人地址、_salt（Agent 跑 find-salt 得到）、税率基点（如 300=3%）。**_meta 与 _salt 由 Agent 直接填写，用户不填。** |
@@ -82,7 +82,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 | 参数 | 说明 |
 |------|------|
 | `tokenAddress` | USDT：`0x55d398326f99059fF775485246999027B3197955` |
-| `spenderAddress` | FlapSkill：`0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7` |
+| `spenderAddress` | FlapSkill：`0xb8793bdc7fad01a49178a559bc540da4b395b923` |
 | `amount` | 要支付的 USDT 数量（人类可读如 `"0.01"`） |
 | `network` | 可选，默认 `bsc` |
 
@@ -90,7 +90,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 
 | 参数 | 说明 |
 |------|------|
-| `contractAddress` | FlapSkill：`0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7` |
+| `contractAddress` | FlapSkill：`0xb8793bdc7fad01a49178a559bc540da4b395b923` |
 | `abi` | buyTokens 的 ABI（见 [references/contract-abi.md](references/contract-abi.md)） |
 | `functionName` | `"buyTokens"` |
 | `args` | `[_token, _usdtAmount]`：目标代币地址、USDT 最小单位（18 位小数，如 0.01 USDT = `"10000000000000000"`） |
@@ -107,7 +107,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 | 参数 | 说明 |
 |------|------|
 | `tokenAddress` | 要卖出的代币合约地址 |
-| `spenderAddress` | FlapSkill：`0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7` |
+| `spenderAddress` | FlapSkill：`0xb8793bdc7fad01a49178a559bc540da4b395b923` |
 | `amount` | 要卖出的代币数量（人类可读或最小单位，≥ 本次 `_tokenAmount`） |
 | `network` | 可选，默认 `bsc` |
 
@@ -115,7 +115,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 
 | 参数 | 说明 |
 |------|------|
-| `contractAddress` | FlapSkill：`0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7` |
+| `contractAddress` | FlapSkill：`0xb8793bdc7fad01a49178a559bc540da4b395b923` |
 | `abi` | sellTokens 的 ABI（见 [references/contract-abi.md](references/contract-abi.md)） |
 | `functionName` | `"sellTokens"` |
 | `args` | `[_token, _tokenAmount]`：代币地址、卖出数量（该代币最小单位） |
@@ -140,7 +140,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 | 参数 | 说明 |
 |------|------|
 | `tokenAddress` | 要卖出的代币合约地址 |
-| `spenderAddress` | FlapSkill：`0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7` |
+| `spenderAddress` | FlapSkill：`0xb8793bdc7fad01a49178a559bc540da4b395b923` |
 | `amount` | 建议 ≥ 本次要卖出的数量（可按比例算，或直接填足够大） |
 | `network` | 可选，默认 `bsc` |
 
@@ -148,7 +148,7 @@ description: 蝴蝶技能（FlapSkill）支持创建代币、用 USDT 买入/卖
 
 | 参数 | 说明 |
 |------|------|
-| `contractAddress` | FlapSkill：`0xa1b611113e6bc59fb78a26d08a89c3d80bc498a7` |
+| `contractAddress` | FlapSkill：`0xb8793bdc7fad01a49178a559bc540da4b395b923` |
 | `abi` | sellTokensByPercent 的 ABI（见 [references/contract-abi.md](references/contract-abi.md)） |
 | `functionName` | `"sellTokensByPercent"` |
 | `args` | `[_token, _percentBps]`：代币地址、比例基点（10000=100%，5000=50%，1000=10%） |
