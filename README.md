@@ -1,6 +1,6 @@
-# Flap Skills（蝴蝶技能）
+# ❄️ Snowball Skills（雪球技能）
 
-基于 [BNB Chain MCP](https://docs.bnbchain.org/showcase/mcp/skills/) 的 AI 技能，让 Agent 能够通过 FlapSkill 合约在 BSC 上**创建代币**、用 **USDT** **买入/卖出**指定代币。
+基于 [BNB Chain MCP](https://docs.bnbchain.org/showcase/mcp/skills/) 的 AI 技能，让 Agent 能够通过 SnowballSkill 合约在 BSC 上**创建自进化代币**、用 **BNB** 直接**买入/卖出**指定代币。
 
 ---
 
@@ -22,76 +22,14 @@
 在当前项目中安装（仅当前项目可用）：
 
 ```bash
-npx skills add flap-builder/flap-skills
-```
-
-全局安装（所有项目可用）：
-
-```bash
-npx skills add flap-builder/flap-skills -g
-```
-
-### OpenClaw
-
-本技能已上架 [ClawHub](https://clawhub.ai)。先安装 ClawHub CLI，再安装本技能：
-
-```bash
-npm i -g clawhub
-clawhub install flap-skills
-```
-
-安装后**新开一次 OpenClaw 会话**，技能才会被加载。使用方式与下方「如何使用」相同：在对话中说「**蝴蝶技能**」即可触发。OpenClaw 需已配置 [BNB Chain MCP](https://docs.bnbchain.org/showcase/mcp/skills/)（如通过官方文档页由 bot 自行拉取并配置），且环境中已设置 `PRIVATE_KEY` 才能发送链上交易。
-
----
-
-## 如何使用
-
-### 触发方式
-
-在对话中说「**蝴蝶技能**」即可触发本技能。
-
-### 前置条件
-
-- 已安装并连接 [BNB Chain MCP](https://docs.bnbchain.org/showcase/mcp/skills/)
-- 在 MCP 的 `env` 中已配置 `PRIVATE_KEY`，否则无法发送链上交易
-
-### 支持的操作
-
-| 操作 | 说明 |
-|------|------|
-| **创建代币** | 按「名称：… 符号：…，税点：…% 税收地址：0x…」格式说明，可选「官网：…」「简介：…」并附代币图片；Agent 会跑脚本生成 meta 与 salt 并调用合约 |
-| **买入** | 先授权 USDT，再按指定代币与 USDT 数量买入 |
-| **卖出（按数量）** | 指定代币地址与卖出数量 |
-| **卖出（按比例）** | 指定代币地址与比例（如 50%、100%） |
-
-### 创建代币提示词示例
-
-```
-蝴蝶技能 创建代币
-名称：My Token
-符号：MTK
-税点：3%
-税收地址：0x...
-官网：https://example.com
-简介：这是一段代币简介
-```
-
-（并附上代币图片，Agent 会调用本技能内的 `scripts/upload-token-meta.js` 等脚本完成 meta 与 salt 的生成。）
-
-### 买入 / 卖出示例
-
-- 「蝴蝶技能 用 10 USDT 买入 0x…」
-- 「蝴蝶技能 卖出 100 个 0x…」
-- 「蝴蝶技能 卖出 50% 的 0x…」
-
-更多合约接口与 ABI 见仓库内 [SKILL.md](./SKILL.md) 与 [references/contract-abi.md](./references/contract-abi.md)。
-
----
-
-## 捐款
-
-如本技能对你有帮助，欢迎捐赠：
-
-**捐款地址**：`0x62F5cCb8b1744A427b7511374F4eb33114217199`
-
-**CA**：`0xe139ca52ffd33d7cbb0dfeaf075f943c13937777`
+npx skills add snowball-builder/snowball-skills
+全局安装（所有项目可用）：Bashnpx skills add snowball-builder/snowball-skills -g
+OpenClaw本技能已上架 ClawHub。先安装 ClawHub CLI，再安装本技能：Bashnpm i -g clawhub
+clawhub install snowball-skills
+安装后新开一次 OpenClaw 会话，技能才会被加载。使用方式与下方「如何使用」相同：在对话中说「雪球技能」即可触发。
+OpenClaw 需已配置 BNB Chain MCP，且环境中已设置 PRIVATE_KEY 才能发送链上交易。
+如何使用触发方式在对话中说「雪球技能」即可触发本技能。
+前置条件已安装并连接 BNB Chain MCP在 MCP 的 env 中已配置 PRIVATE_KEY，否则无法发送链上交易支持的操作操作说明创建进化代币默认 3% 税点。
+按「名称：… 符号：…」格式说明，可选「官网：…」「简介：…」并附图片；
+Agent 将生成元数据并关联母币回购逻辑买入直接使用 BNB 按指定金额买入目标代币卖出（按数量）指定代币地址与卖出的 Token 数量，
+换回 BNB卖出（按比例）指定代币地址与比例（如 50%、100%），实现自动化滚雪球止盈
