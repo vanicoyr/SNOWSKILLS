@@ -34,14 +34,7 @@
 
 ```json
 {
-  "name": "snowball-skills",
-  "version": "1.0.0",
-  "description": "AI-powered self-evolving token creation and BNB trading skill for BSC",
-  "main": "index.js",
-  "keywords": ["BNBChain", "MCP", "Snowball", "AI-Agent"],
-  "dependencies": {
-    "ethers": "^6.10.0",
-    "axios": "^1.6.0"
+
 create_snowball_token(name, symbol, metadata): 调用合约创建新代币。强制税点：3%。
 
 swap_bnb_for_token(token_address, bnb_amount): 发起 BNB 买入交易。
